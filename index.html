@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پوشاک صنعتی وصال  - خدمات خیاطی حرفه‌ای  </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #FFD700;
+            --light: #FFF8DC;
+            --dark: #3E2723;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --danger: #F44336;
+        }
+        
+        body {
+            background-color: #f9f5f0;
+            color: var(--dark);
+            line-height: 1.8;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to left, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(210, 105, 30, 0.8)), url('https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+            margin-right: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        /* Services Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        /* Design Gallery */
+        .designs {
+            background-color: var(--light);
+        }
+        
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .design-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .design-img {
+            height: 250px;
+            background-color: #e0d3c5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary);
+        }
+        
+        .design-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(139, 69, 19, 0.85);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .design-item:hover .design-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Customer Section */
+        .customer-section {
+            background: white;
+        }
+        
+        .customer-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        /* Manager Section */
+        .manager-section {
+            background-color: #f0e6d2;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .stat-card h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Finance Section */
+        .finance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .finance-table th,
+        .finance-table td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .finance-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .finance-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .status-paid {
+            color: var(--success);
+            font-weight: 600;
+        }
+        
+        .status-pending {
+            color: var(--warning);
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-right: 0;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            justify-content: flex-end;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Persian Font Fallback */
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-cut"></i>
+                <h1>پوشاک صنعتی وصال </h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">صفحه اصلی</a></li>
+                    <li><a href="#services">خدمات</a></li>
+                    <li><a href="#designs">طرح‌ها</a></li>
+                    <li><a href="#customer">مشتری</a></li>
+                    <li><a href="#manager">مدیر</a></li>
+                    <li><a href="#contact">ارتباط با ما</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>خدمات خیاطی حرفه‌ای</h2>
+            <p>تجربه‌ی برش و دوخت بی‌نظیر با خیاطان متخصص ما؛ از سبک سنتی تا مدرن، لباس‌هایی خیاطی می‌شود که سبک منحصربه‌فرد شما را منعکس می‌کند.</p>
+            <div class="btn-group">
+                <a href="#customer" class="btn">ثبت نوبت</a>
+                <a href="#designs" class="btn btn-outline">مشاهده طرح‌ها</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدمات ما</h2>
+                <p>ما روند جامعی از خدمات خیاطی را برای رفع تمام نیازهای پوشاک شما ارائه می‌دهیم</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>خیاطی سفارشی</h3>
+                        <p>کت و شلوار، پیراهن و شلوار سفارشی با ابعاد دقیق شما برای یک برش بی‌نظیر.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>لباس سنتی</h3>
+                        <p>دوخت انواع لباس های مردانه و زنانه با ناب ترین دیزاین ها</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-vest"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>تغییرات و تعمیرات</h3>
+                        <p>تغییرات و تعمیرات حرفه‌ای برای نفس تازه‌ای به لباس‌های مورد علاقه‌تان.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Gallery -->
+    <section id="designs" class="section designs">
+        <div class="container">
+            <div class="section-title">
+                <h2>طرح‌های جدید</h2>
+                <p>مجموعه جدید طرح‌های مدرن و سنتی ما را کشف کنید</p>
+            </div>
+            <div class="designs-grid">
+                <div class="design-item">
+                    <div class="design-img">
+                        <i class="fas fa-vest"></i>
+                    </div>
+                    <div class="design-overlay">
+                        <h3>شلوار با دیزاین مدرن</h3>
+                        <p>ترکیبی زیبا از سبک سنتی و مدرن</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <div class="design-img">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <div class="design-overlay">
+                        <h3>لچک طراحی‌شده</h3>
+                        <p>گلدوزی ظریف با پارچه‌های مرغوب</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <div class="design-img">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="design-overlay">
+                        <h3>کت و شلوار رسمی</h3>
+                        <p>برش کلاسیک با تکنیک‌های خیاطی مدرن</p>
+                    </div>
+                </div>
+                <div class="design-item">
+                    <div class="design-img">
+                        <i class="fas fa-vest"></i>
+                    </div>
+                    <div class="design-overlay">
+                        <h3>مجموعه عروسی</h3>
+                        <p>طرح‌های ویژه برای روز خاص شما</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Section -->
+    <section id="customer" class="section customer-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>صفحه مشتری</h2>
+                <p>ثبت نوبت، پیگیری سفارش و مدیریت تنظیمات خود</p>
+            </div>
+            <div class="customer-form">
+                <div class="tabs">
+                    <div class="tab active" data-tab="booking">ثبت نوبت</div>
+                    <div class="tab" data-tab="tracking">پیگیری سفارش</div>
+                    <div class="tab" data-tab="preferences">تنظیمات من</div>
+                </div>
+                
+                <div class="tab-content active" id="booking">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">نام و تخلص</label>
+                                <input type="text" id="name" class="form-control" placeholder=" عارف عرفان">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">شماره تلفن</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+9377 217 1614">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">آدرس ایمیل</label>
+                                <input type="email" id="email" class="form-control" placeholder="ariferfan012023@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">نوع سفارش</label>
+                                <select id="service" class="form-control">
+                                    <option>انتخاب سفارش</option>
+                                    <option>دوخت سفارشی</option>
+                                    <option>دوخت معمولی</option>
+                                    <option>ایحاد تغییرات </option>
+                                    <option>دوخت لباس عروسی</option>
+                                    <option>لباس جشن فراغت</option>
+                                    <option>سایر موارد ...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">تاریخ مورد نظر</label>
+                            <input type="date" id="date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">دستورالعمل‌های ویژه</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="آیا نیاز خاصی دارید؟"></textarea>
+                        </div>
+                        <button type="submit" class="btn">ثبت نوبت</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="tracking">
+                    <form>
+                        <div class="form-group">
+                            <label for="order-id">شماره سفارش</label>
+                            <input type="text" id="order-id" class="form-control" placeholder="شماره سفارش خود را وارد کنید">
+                        </div>
+                        <button type="submit" class="btn">پیگیری سفارش</button>
+                    </form>
+                    <div class="order-status" style="margin-top: 20px; display: none;">
+                        <h3>وضعیت سفارش: در حال انجام</h3>
+                        <p>تاریخ تکمیل:۱۴۰۴/۸/۲۸</p>
+                        <p>آخرین به‌روزرسانی:۱۴۰۴/۸/۲۶</p>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="preferences">
+                    <form>
+                        <div class="form-group">
+                            <label>پارچه‌های مورد علاقه</label>
+                            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                                <label class="checkbox">
+                                    <input type="checkbox"> تکه بخملی
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox"> تکه ابریشمی
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox"> تکه کتانی
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox"> تکه گلفی
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox"> تکه نخی
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox"> تکه لنگوته‌یی
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="style">سبک مورد علاقه</label>
+                            <select id="style" class="form-control">
+                                <option>کلاسیک</option>
+                                <option>مدرن</option>
+                                <option>سنتی</option>
+                                <option>سفارشی</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">ثبت و ارسال سفارش</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manager Section -->
+    <section id="manager" class="section manager-section">
+        <div class="container">
+            <div class="section-title">
+                <h2> صفحه مدیر</h2>
+                <p>مروری بر فروشگاه، امور مالی و مدیریت مشتریان</p>
+            </div>
+            
+            <div class="dashboard">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>۱۲۸</h3>
+                    <p>مشتری فعال</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>۲۴</h3>
+                    <p>سفارش در حال انجام</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>۴۵۸۰۰ افغانی</h3>
+                    <p>درآمد ماهانه</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>۱۸</h3>
+                    <p>نوبت امروز</p>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 40px;">
+                <h2>وضعیت مالی</h2>
+            </div>
+            
+            <table class="finance-table">
+                <thead>
+                    <tr>
+                        <th>شماره سفارش</th>
+                        <th>مشتری</th>
+                        <th>خدمت</th>
+                        <th>مبلغ</th>
+                        <th>وضعیت</th>
+                        <th>تاریخ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#AC-001</td>
+                        <td>عرفان</td>
+                        <td>کت و شلوار سفارشی</td>
+                        <td>۲۳۰۰ افغانی</td>
+                        <td class="status-paid">پرداخت شده</td>
+                        <td>۱۴۰۴/۹/۳</td>
+                    </tr>
+                    <tr>
+                        <td>#AC-002</td>
+                        <td>محمد</td>
+                        <td>رضایی</td>
+                        <td>۱۵۸۰ افغانی</td>
+                        <td class="status-pending">در انتظار</td>
+                        <td>۱۴۰۴/۹/۳</td>
+                    </tr>
+                    <tr>
+                        <td>#AC-003</td>
+                        <td>فرزانه</td>
+                        <td>احمدی</td>
+                        <td>۱۸۰۰ افغانی</td>
+                        <td class="status-paid">پرداخت شده</td>
+                        <td>۱۴۰۴/۹/۴</td>
+                    </tr>
+                    <tr>
+                        <td>#AC-004</td>
+                        <td>زهرا</td>
+                        <td>شلوار کمرریز</td>
+                        <td>۸۰۰ افغانی</td>
+                        <td class="status-pending">در انتظار</td>
+                        <td>۱۴۰۴/۹/۲</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>پوشاک صنعتی وصال </h3>
+                    <p>خدمات خیاطی حرفه‌ای با بیش از ۲۵ سال تجربه در خیاطی لباس‌هایی با برش بی‌نظیر برای هر مناسبتی.</p>
+                    <div style="margin-top: 20px;">
+                        <i class="fas fa-map-marker-alt"></i> ایستگاه رسالت، دشت برچی، غرب کابل<br>
+                        <i class="fas fa-phone"></i> 1614 217 077<br>
+                        <i class="fas fa-envelope"></i> info@sanatiwesal.com
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="#home">خانه</a></li>
+                        <li><a href="#services">خدمات</a></li>
+                        <li><a href="#designs">طرح‌ها</a></li>
+                        <li><a href="#customer">صفحه مشتری</a></li>
+                        <li><a href="#manager">صفحه مدیر</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>ساعات کاری</h3>
+                    <ul>
+                        <li>شنبه تا پنج‌شنبه: ۷ صبح تا ۸ شب</li>
+                        <li>جمعه: تعطیل</li>
+                    </ul>
+                    <h3 style="margin-top: 20px;">ما را دنبال کنید</h3>
+                    <div style="display: flex; gap: 15px; margin-top: 10px; justify-content: flex-end;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;پوشاک صنعتی وصال؛ کلیه حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Update active nav link
+                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
